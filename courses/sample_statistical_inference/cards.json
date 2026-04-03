@@ -1,0 +1,38 @@
+[
+  {
+    "id": "statinf-2023-08-q1",
+    "exam_id": "statinf-2023-08",
+    "prompt": "A question compares a sample mean against a fixed target value, the population variance is unknown, and the sample is small. Which hypothesis test is the default choice?",
+    "answer": "A one-sample t-test is the default choice because the variance is unknown and the task compares one sample mean to a fixed benchmark.",
+    "question_type": "one-sample test",
+    "tags": ["means", "hypothesis testing"],
+    "hints": ["Look for one sample.", "Check whether the variance is known."]
+  },
+  {
+    "id": "statinf-2023-08-q3",
+    "exam_id": "statinf-2023-08",
+    "prompt": "Two independent groups are compared on their means and the question gives two separate samples. Which test family should you evaluate first?",
+    "answer": "Start with an independent two-sample t-test, then confirm whether equal-variance assumptions are reasonable or if Welch's version is better.",
+    "question_type": "two-sample test",
+    "tags": ["means", "independent samples"],
+    "hints": ["The groups are unrelated.", "You are comparing two means."]
+  },
+  {
+    "id": "statinf-2024-01-q2",
+    "exam_id": "statinf-2024-01",
+    "prompt": "The same subjects are measured before and after an intervention. Which hypothesis test pattern is most likely correct?",
+    "answer": "A paired t-test is most likely correct because the measurements are linked subject-by-subject.",
+    "question_type": "paired test",
+    "tags": ["paired data", "means"],
+    "hints": ["The observations come in pairs.", "Think about dependent samples."]
+  },
+  {
+    "id": "statinf-2024-01-q5",
+    "exam_id": "statinf-2024-01",
+    "prompt": "The question asks whether a sample proportion differs from a claimed benchmark proportion in a large sample. Which test should be considered?",
+    "answer": "A one-sample proportion z-test is the standard starting point when the sample is large and the target is a single claimed proportion.",
+    "question_type": "proportion test",
+    "tags": ["proportions", "large sample"],
+    "hints": ["This is about a proportion, not a mean.", "There is a single benchmark proportion."]
+  }
+]
