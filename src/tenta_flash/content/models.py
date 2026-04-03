@@ -32,6 +32,8 @@ class CardRecord:
     question_type: str
     tags: tuple[str, ...]
     hints: tuple[str, ...]
+    primary_test: str = ""
+    alternative_tests: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)

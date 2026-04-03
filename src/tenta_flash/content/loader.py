@@ -125,6 +125,8 @@ def _load_cards(path: Path, exam_ids: set[str]) -> list[CardRecord]:
             question_type=require_string(item, "question_type", str(path)),
             tags=optional_string_list(item, "tags"),
             hints=optional_string_list(item, "hints"),
+            primary_test=optional_string(item, "primary_test"),
+            alternative_tests=optional_string_list(item, "alternative_tests"),
         )
         if card.exam_id not in exam_ids:
             raise ContentValidationError(

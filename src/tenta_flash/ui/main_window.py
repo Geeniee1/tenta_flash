@@ -26,7 +26,14 @@ from PySide6.QtWidgets import (
 )
 
 from tenta_flash.content.models import CardRecord, Catalog
-from tenta_flash.filters import CatalogFilter, available_examiners, available_question_types, filter_cards, filter_exams
+from tenta_flash.filters import (
+    CatalogFilter,
+    available_examiners,
+    available_primary_tests,
+    available_question_types,
+    filter_cards,
+    filter_exams,
+)
 from tenta_flash.session import Rating, SessionEngine
 from tenta_flash.storage import ProgressStore
 
@@ -93,6 +100,10 @@ class MainWindow(QMainWindow):
         self.question_type_combo.currentIndexChanged.connect(self._refresh_browser)
         form.addRow("Question Type", self.question_type_combo)
 
+        self.primary_test_combo = QComboBox()
+        self.primary_test_combo.currentIndexChanged.connect(self._refresh_browser)
+        form.addRow("Primary Test", self.primary_test_combo)
+
         self.start_date = QDateEdit()
         self.start_date.setCalendarPopup(True)
         self.start_date.dateChanged.connect(self._refresh_browser)
@@ -122,8 +133,8 @@ class MainWindow(QMainWindow):
         browser_title.setStyleSheet("font-size: 18px; font-weight: 600;")
         browser_layout.addWidget(browser_title)
 
-        self.card_table = QTableWidget(0, 5)
-        self.card_table.setHorizontalHeaderLabels(["Date", "Exam", "Examiner", "Type", "Prompt"])
+        self.card_table = QTableWidget(0, 6)
+        self.card_table.setHorizontalHeaderLabels(["Date", "Exam", "Examiner", "Type", "Primary Test", "Prompt"])
         self.card_table.horizontalHeader().setStretchLastSection(True)
         self.card_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.card_table.setSelectionBehavior(QAbstractItemView.SelectRows)
@@ -223,6 +234,7 @@ class MainWindow(QMainWindow):
         self.exam_combo.blockSignals(True)
         self.examiner_combo.blockSignals(True)
         self.question_type_combo.blockSignals(True)
+        self.primary_test_combo.blockSignals(True)
 
         self.exam_combo.clear()
         self.exam_combo.addItem("Any", None)
@@ -240,6 +252,11 @@ class MainWindow(QMainWindow):
         for question_type in available_question_types(self.catalog, course_ids):
             self.question_type_combo.addItem(question_type, question_type)
 
+        self.primary_test_combo.clear()
+        self.primary_test_combo.addItem("Any", None)
+        for primary_test in available_primary_tests(self.catalog, course_ids):
+            self.primary_test_combo.addItem(primary_test, primary_test)
+
         if exams:
             self.start_date.setDate(_qdate_from_date(exams[0].date))
             self.end_date.setDate(_qdate_from_date(exams[-1].date))
@@ -255,6 +272,7 @@ class MainWindow(QMainWindow):
         self.exam_combo.blockSignals(False)
         self.examiner_combo.blockSignals(False)
         self.question_type_combo.blockSignals(False)
+        self.primary_test_combo.blockSignals(False)
 
     def _current_filter(self) -> CatalogFilter:
         start = self.start_date.date().toPython()
@@ -264,6 +282,7 @@ class MainWindow(QMainWindow):
             exam_id=self.exam_combo.currentData(),
             examiner=self.examiner_combo.currentData(),
             question_type=self.question_type_combo.currentData(),
+            primary_test=self.primary_test_combo.currentData(),
             start_date=start,
             end_date=end,
         )
@@ -280,6 +299,7 @@ class MainWindow(QMainWindow):
                 exam.title,
                 exam.examiner,
                 card.question_type,
+                card.primary_test or "Not tagged",
                 card.prompt,
             ]
             for column, value in enumerate(values):
@@ -310,6 +330,13 @@ class MainWindow(QMainWindow):
                     f"Exam: {exam.title} ({exam.date.isoformat()})",
                     f"Examiner: {exam.examiner}",
                     f"Question type: {card.question_type}",
+                    f"Primary test: {card.primary_test or 'No single named test'}",
+                    (
+                        "Alternative tests: "
+                        + ", ".join(card.alternative_tests)
+                        if card.alternative_tests
+                        else "Alternative tests: None"
+                    ),
                     "",
                     "Prompt:",
                     card.prompt,
@@ -340,7 +367,7 @@ class MainWindow(QMainWindow):
         )
         self.session_meta_label.setText(
             f"{self.catalog.courses[exam.course_id].name} | {exam.title} | "
-            f"{exam.examiner} | {card.question_type}"
+            f"{exam.examiner} | {card.question_type} | {card.primary_test or 'No single named test'}"
         )
         self.prompt_box.setText(card.prompt)
         self.answer_box.hide()
@@ -420,6 +447,12 @@ class MainWindow(QMainWindow):
                     f"Exam: {exam.title} ({exam.date.isoformat()})",
                     f"Examiner: {exam.examiner}",
                     f"Question type: {result.card.question_type}",
+                    f"Primary test: {result.card.primary_test or 'No single named test'}",
+                    (
+                        "Alternative tests: " + ", ".join(result.card.alternative_tests)
+                        if result.card.alternative_tests
+                        else "Alternative tests: None"
+                    ),
                     f"Final rating: {result.rating.value}",
                     f"Shown count this session: {result.shown_count}",
                     "",

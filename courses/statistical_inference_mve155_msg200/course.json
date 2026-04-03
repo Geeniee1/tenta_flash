@@ -1,0 +1,13 @@
+{
+  "id": "statistical_inference_mve155_msg200",
+  "code": "MVE155/MSG200",
+  "name": "Statistical Inference",
+  "description": "Draft flashcards and compendium-aligned test mappings derived from the local MVE155/MSG200 archive.",
+  "tags": [
+    "statistics",
+    "hypothesis testing",
+    "bayesian inference",
+    "regression",
+    "anova"
+  ]
+}

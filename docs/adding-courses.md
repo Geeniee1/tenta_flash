@@ -26,7 +26,8 @@ Best when the PDF is math-heavy or the formatting is messy.
 2. Split the material into one flashcard per question or sub-question.
 3. Write a clear `prompt`.
 4. Write a concise `answer` focused on recognition and method choice.
-5. Tag the card with a useful `question_type`.
+5. Tag the card with a useful broad `question_type`.
+6. Add `primary_test` and `alternative_tests` when the question really is a named test-selection problem.
 
 ### Option 2: Use Codex to help transcribe
 
@@ -49,6 +50,17 @@ If you use another tool to extract text from PDFs:
 4. validate before use
 
 Automatic parsing is usually imperfect for equations, tables, and multi-part questions. Expect manual cleanup.
+
+## Reusable pattern from the statistical inference course
+
+The repo now includes course-specific authoring scripts in [`scripts/`](/Users/edwind/tenta_flash/scripts) that show one practical workflow:
+
+1. rename source PDFs into a stable identifier format
+2. extract numbered questions from the PDFs
+3. attach a draft broad `question_type` plus a suggested `primary_test`
+4. review and correct the generated JSON manually
+
+That pattern is useful when a course archive is large and you want Codex to do the first pass before you verify the final classifications.
 
 ## Step-by-step example
 

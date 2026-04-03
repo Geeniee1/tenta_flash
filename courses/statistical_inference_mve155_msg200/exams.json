@@ -1,0 +1,74 @@
+[
+  {
+    "id": "140323_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "March 2023 Exam",
+    "date": "2023-03-14",
+    "examiner": "Aila Sarkka",
+    "notes": "Draft mapping generated from the local PDF archive; review suggested methods before final release.",
+    "source_pdf": "140323_aila_sarkka.pdf"
+  },
+  {
+    "id": "080623_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "June 2023 Exam",
+    "date": "2023-06-08",
+    "examiner": "Aila Sarkka",
+    "notes": "The PDF header says Tuesday, June 8, 2023, even though June 8, 2023 was a Thursday. The numeric date is used for identifiers.",
+    "source_pdf": "080623_aila_sarkka.pdf"
+  },
+  {
+    "id": "150823_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "August 2023 Exam",
+    "date": "2023-08-15",
+    "examiner": "Aila Sarkka",
+    "notes": "Draft mapping generated from the local PDF archive; review suggested methods before final release.",
+    "source_pdf": "150823_aila_sarkka.pdf"
+  },
+  {
+    "id": "120324_tony_johansson",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "March 2024 Exam",
+    "date": "2024-03-12",
+    "examiner": "Tony Johansson",
+    "notes": "This PDF bundles the exam with solutions. The draft dataset uses only the exam questions.",
+    "source_pdf": "120324_tony_johansson.pdf"
+  },
+  {
+    "id": "270824_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "August 2024 Exam",
+    "date": "2024-08-27",
+    "examiner": "Aila Sarkka",
+    "notes": "Draft mapping generated from the local PDF archive; review suggested methods before final release.",
+    "source_pdf": "270824_aila_sarkka.pdf"
+  },
+  {
+    "id": "180325_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "March 2025 Exam",
+    "date": "2025-03-18",
+    "examiner": "Aila Sarkka",
+    "notes": "Draft mapping generated from the local PDF archive; review suggested methods before final release.",
+    "source_pdf": "180325_aila_sarkka.pdf"
+  },
+  {
+    "id": "280825_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "August 2025 Exam",
+    "date": "2025-08-28",
+    "examiner": "Aila Sarkka",
+    "notes": "The PDF header says Tuesday, August 28, 2025, even though August 28, 2025 was a Thursday. The numeric date is used for identifiers.",
+    "source_pdf": "280825_aila_sarkka.pdf"
+  },
+  {
+    "id": "200326_aila_sarkka",
+    "course_id": "statistical_inference_mve155_msg200",
+    "title": "March 2026 Exam",
+    "date": "2026-03-20",
+    "examiner": "Aila Sarkka",
+    "notes": "This PDF bundles the exam with solutions. The draft dataset uses only the exam questions.",
+    "source_pdf": "200326_aila_sarkka.pdf"
+  }
+]

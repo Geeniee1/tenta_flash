@@ -13,9 +13,10 @@ class ValidationTests(unittest.TestCase):
     def test_load_catalog_reads_sample_course(self) -> None:
         root = Path(__file__).resolve().parents[1] / "courses"
         catalog = load_catalog(root)
-        self.assertEqual(len(catalog.courses), 1)
-        self.assertEqual(len(catalog.exams), 2)
-        self.assertEqual(len(catalog.cards), 4)
+        self.assertGreaterEqual(len(catalog.courses), 2)
+        self.assertIn("sample_statistical_inference", catalog.courses)
+        self.assertIn("sample_statistical_inference", {exam.course_id for exam in catalog.exams.values()})
+        self.assertGreaterEqual(len(catalog.cards), 4)
 
     def test_duplicate_card_ids_raise_error(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

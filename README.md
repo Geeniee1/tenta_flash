@@ -90,7 +90,7 @@ python -m pip install -e ".[dev]"
 The first version supports:
 
 - choosing one or more courses
-- filtering by exam, examiner, question type, and date range
+- filtering by exam, examiner, broad question type, primary test, and date range
 - starting a flashcard session from the filtered question pool
 - revealing the answer
 - rating the card as `Solved`, `Almost`, `Need Again`, or `No Idea`
@@ -111,8 +111,32 @@ Short version:
 1. Create a new folder under `courses/`.
 2. Add `course.json`, `exams.json`, and `cards.json`.
 3. Convert your PDFs into structured question/answer entries.
-4. Run `python -m tenta_flash validate`.
-5. Start the app and confirm the course appears in the library.
+4. Use `question_type` for the broad study category and `primary_test` for the exact named method when appropriate.
+5. Run `python -m tenta_flash validate`.
+6. Start the app and confirm the course appears in the library.
+
+## Statistical inference authoring helpers
+
+For the local statistical inference archive, the repo now includes helper scripts for:
+
+- renaming the source PDFs to the `ddmmyy_examiner.pdf` convention
+- generating the draft JSON dataset for the recent exams
+
+Install the extra authoring dependency first:
+
+```bash
+python -m pip install -e ".[dev,authoring]"
+```
+
+Then use:
+
+```bash
+python scripts/rename_statistical_inference_pdfs.py --source-dir /path/to/pdf/folder --dry-run
+python scripts/rename_statistical_inference_pdfs.py --source-dir /path/to/pdf/folder --apply
+python scripts/build_statistical_inference_course.py --source-dir /path/to/pdf/folder
+```
+
+The generated course lives in [`courses/statistical_inference_mve155_msg200/`](/Users/edwind/tenta_flash/courses/statistical_inference_mve155_msg200).
 
 ## Suggested iteration commits
 

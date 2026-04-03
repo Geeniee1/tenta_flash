@@ -20,6 +20,9 @@ dependencies = [
 dev = [
   "pytest>=8.2,<9",
 ]
+authoring = [
+  "pypdf>=6,<7",
+]
 
 [project.scripts]
 tenta-flash = "tenta_flash.main:main"

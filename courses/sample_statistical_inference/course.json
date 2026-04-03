@@ -1,7 +1,7 @@
 {
   "id": "sample_statistical_inference",
-  "code": "STAT-INF101",
-  "name": "Statistical Inference",
-  "description": "Pattern recognition flashcards for recurring hypothesis-testing questions.",
-  "tags": ["statistics", "hypothesis testing", "exam practice"]
+  "code": "EXAMPLE101",
+  "name": "Example Course",
+  "description": "Small example dataset used to illustrate the repository content format.",
+  "tags": ["example", "demo", "flashcards"]
 }

@@ -1,0 +1,954 @@
+[
+  {
+    "id": "140323_aila_sarkka_q1",
+    "exam_id": "140323_aila_sarkka",
+    "prompt": "a) Derive the maximum likelihood estimator for the population proportion and show that it is an unbiased and consistent estimator for the population proportion. b) What are the similarities and differences between random sampling and simple random sampling? c) If stratified sampling with k strata is used, the sample mean becomes \u00afXs = Pk i=1 wi \u00afXi, where wi is the stratum fraction and \u00afXi the sample mean in stratum i, i = 1, ..., k. Compute the variance of \u00afXs if the n observations in the sample are allocated to thek strata proportionally to the strata sizes. (6p)",
+    "answer": "No single hypothesis test. This is a foundations question about MLE for a proportion, random versus simple random sampling, and the variance of a stratified sample mean under proportional allocation.",
+    "question_type": "Sampling and design",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "maximum likelihood",
+      "random sampling",
+      "simple random sampling",
+      "stratified sampling"
+    ],
+    "hints": [
+      "Treat this as estimation plus sampling design.",
+      "Look for MLE, sampling terminology, and stratified variance."
+    ],
+    "source_pdf": "140323_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "140323_aila_sarkka_q2",
+    "exam_id": "140323_aila_sarkka",
+    "prompt": "A group of nurses wants to study if the number of maternity care visits (before birth) has a positive effect on the birth weight of the child. The data (see the table and histograms below) consist of 10 mothers who had had 5 or fewer maternity care visits before birth and 10 mothers who had had 6 or more. Let X (5 or less) and Y (6 or more) be the birth weights of the babies in these two populations. x 49 108 110 82 93 134 114 96 52 101 y 133 108 93 119 106 131 87 153 116 129 (\u00afx = 93.9, sx = 26.75, \u00afy = 117.5, sy = 19.92) a) Formulate null and alternative hypotheses. Motivate your choice of the alternative hypotesis. b) Perform a parametric test corresponding to the hypotheses in a). c) Perform a non-parametric test. Reformulate the hypotheses in this case. d) Discuss and compare the results in b) and c). Why do they lead to the same/different conclusions? e) Which assumptions have you made in b) and c)? Do they seem to be valid? (8p)",
+    "answer": "Use an independent two-group comparison. The primary parametric method is a one-sided two-sample t-test, and the requested non-parametric check is a rank-sum style comparison because the two groups of mothers are independent.",
+    "question_type": "Independent two-sample comparison",
+    "primary_test": "Two-sample t-test",
+    "alternative_tests": [
+      "Rank sum test"
+    ],
+    "tags": [
+      "two-sample t-test",
+      "rank-sum test",
+      "one-sided alternative",
+      "independent samples"
+    ],
+    "hints": [
+      "Two independent groups.",
+      "Continuous outcome: birth weight.",
+      "Question explicitly asks for both parametric and non-parametric methods."
+    ],
+    "source_pdf": "140323_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "140323_aila_sarkka_q3",
+    "exam_id": "140323_aila_sarkka",
+    "prompt": "Assume that we have a sample of size 20 from a normal distribution with mean \u00b5 and variance \u03c32 = 4. We would like to test the null hypothesis H0 : \u00b5 = 10 against H1 : \u00b5 \u0338= 10 at the significance level 0.05. Assume that the true expected value is 9. What is the probability that the test cannot reveal this (that the true mean is 9 instead of 10)? (4p)",
+    "answer": "This is a one-sample mean test with known variance, so the core method is the one-sample z-test. The task specifically asks for the type II error or power calculation when the true mean is 9.",
+    "question_type": "One-sample mean inference",
+    "primary_test": "Large-sample test for the mean (Z-test)",
+    "alternative_tests": [],
+    "tags": [
+      "one-sample z-test",
+      "type II error",
+      "power",
+      "known variance"
+    ],
+    "hints": [
+      "Normal model.",
+      "Variance is known.",
+      "The key output is beta or power, not just a reject/do-not-reject decision."
+    ],
+    "source_pdf": "140323_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "140323_aila_sarkka_q4",
+    "exam_id": "140323_aila_sarkka",
+    "prompt": "We want to study how the choice of detergent and water temperature affect the dirt removal of laundry by using two types of detergents (deter) and three different temperatures (temp) by using the analysis of variance. The values of the response variable, the amount of dirt removed, are given in the following table: Cold Warm Hot 4 7 10 5 8 11 Detergent 1 5 9 12 6 12 19 5 3 15 4 12 10 4 12 12 Detergent 2 6 13 13 6 15 13 5 13 12 An incomplete ANOVA table is given below: Df Sum Sq Mean Sq F value temp 312.47 deter 12.03 temp:deter 60.47 error 114.00 a) Give the model for the observations that corresponds to the (incomplete) ANOVA table. Give also the hypotheses of interest. b) Complete the ANOVA table and interpret the results. c) Give a formula to compute one of the p-values. d) Give an estimate for the error/noise variance. e) Discuss the choice of the model. Which assumptions are needed? (7p)",
+    "answer": "Use a two-way ANOVA with detergent and temperature as factors, including the interaction term. The question asks for the model, hypotheses, completed ANOVA table, and interpretation of main effects plus interaction.",
+    "question_type": "Two-way ANOVA",
+    "primary_test": "F-test (Two-way ANOVA)",
+    "alternative_tests": [],
+    "tags": [
+      "two-way ANOVA",
+      "interaction",
+      "factorial design"
+    ],
+    "hints": [
+      "Two factors: detergent and temperature.",
+      "Check both main effects and interaction."
+    ],
+    "source_pdf": "140323_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "140323_aila_sarkka_q5",
+    "exam_id": "140323_aila_sarkka",
+    "prompt": "We have a sample ( x1, x2, ..., xn) drawn from the Poisson distribution Pois(\u03bb) and want to estimate \u03bb by using Bayesian inference. a) Show that gamma distribution is a conjugate prior for the Poisson distribution. The density function of Y \u223c Gam(\u03b1, \u03b2) is f(y) = \u03b2\u03b1 \u0393(\u03b1) y\u03b1\u22121e\u2212\u03b2y , y > 0, and the probability mass function for X \u223c Pois(\u03bb) is P (X = x) = \u03bbx x! e\u2212\u03bb, x = 0, 1, ... b) What are the advantages of choosing a conjugate prior (if possible)? c) What are the advantages of having a large sample size? (5p)",
+    "answer": "This is a Bayesian Poisson-Gamma conjugacy question. The main tasks are deriving the posterior under a Gamma prior, explaining why conjugate priors are convenient, and reflecting on what a large sample changes.",
+    "question_type": "Bayesian inference",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "Poisson-Gamma conjugacy",
+      "Bayesian estimation",
+      "conjugate prior"
+    ],
+    "hints": [
+      "Poisson likelihood.",
+      "Gamma prior.",
+      "Posterior stays in the same family."
+    ],
+    "source_pdf": "140323_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "080623_aila_sarkka_q1",
+    "exam_id": "080623_aila_sarkka",
+    "prompt": "We have a parametric model (probability density f) determined by one parameter \u03b8 and we wish to estimate \u03b8 from a given random sample (x1, ..., xn). a) Give the basic idea behind the method of moments to estimate \u03b8. b) Give the basic idea behind the maximum likelihood method to estimate \u03b8. c) Define an unbiased and consistent point estimator. (5p)",
+    "answer": "No single test. This is a point-estimation foundations question covering the method of moments, maximum likelihood, and the definitions of unbiased and consistent estimators.",
+    "question_type": "Point estimation",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "method of moments",
+      "maximum likelihood",
+      "unbiasedness",
+      "consistency"
+    ],
+    "hints": [
+      "Estimator theory.",
+      "No hypothesis test to choose here."
+    ],
+    "source_pdf": "080623_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "080623_aila_sarkka_q2",
+    "exam_id": "080623_aila_sarkka",
+    "prompt": "A total of 309 furniture defects were recorded and the defects were classified into four types: A, B, C, and D. At the same time, each piece of furniture was identified by the production shift in which it was manufactured. These counts are presented in the following table: Shift Type of defect 1 2 3 Total A 15 26 33 74 B 21 31 17 69 C 45 34 49 128 D 13 5 20 38 Total 94 96 119 309 a) Perform a statistical test to investigate whether the data above present sufficient evidence to indicate that the type of furniture defect varies with the shift during which the piece of furniture was produced. Give the hypotheses tested and interpret the result of the test. b) Which assumptions do you need to perform the test in a)? Do they hold? (5p)",
+    "answer": "Use a chi-squared test of independence. The data come from one contingency table relating defect type to production shift, so the key question is whether those two categorical variables are associated.",
+    "question_type": "Categorical data analysis",
+    "primary_test": "Chi-squared test of independence",
+    "alternative_tests": [],
+    "tags": [
+      "chi-squared test of independence",
+      "contingency table"
+    ],
+    "hints": [
+      "One table.",
+      "Two categorical variables: defect type and shift."
+    ],
+    "source_pdf": "080623_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "080623_aila_sarkka_q3",
+    "exam_id": "080623_aila_sarkka",
+    "prompt": "An experiment was conducted to compare the mean reaction times to two types of traffic signs: prohibitive (no left turn) and permissive (left turn only). Ten drivers were included in the experiment. The mean reaction times (in milliseconds) to the prohibitive and permissive traffic signs for each driver are given in the table below: Driver Prohibitive ( x) Permissive ( y) x \u2212 y 1 824 702 122 2 866 725 141 3 841 744 97 4 770 663 107 5 829 792 37 6 764 708 56 7 857 747 110 8 831 685 146 9 846 742 104 10 759 610 149 Based on the data above, we can compute \u00af x = 818 .7, sdx = 39 .7, \u00afy = 711.8, sdy = 51.0, x \u2212 y = 106.9, sdx\u2212y = 36.9. a) Perform a parametric test to investigate whether the data present sufficient evidence to indicate a difference in mean reaction times to prohibite and permissive traffic signs. Give the hypotheses and interpret the result of the test. b) Find a 95% confidence interval for the difference in mean reaction times to prohibite and permissive traffic signs. c) Perform a non-parametric test to investigate the same question as in a). Give the hypotheses and interpret the result of the test. d) Compare the results in a), b) and c). e) Give the assumptions needed in a), b) and c). (8p)",
+    "answer": "Treat this as a matched-pairs problem because each driver responds to both sign types. The main parametric method is a paired t-test, with a confidence interval for the mean difference and a non-parametric signed-rank alternative.",
+    "question_type": "Paired-sample comparison",
+    "primary_test": "Paired t-test (one-sample t-test on differences)",
+    "alternative_tests": [
+      "Signed rank test"
+    ],
+    "tags": [
+      "paired t-test",
+      "confidence interval",
+      "signed-rank test",
+      "matched pairs"
+    ],
+    "hints": [
+      "Same drivers see both conditions.",
+      "Analyze the within-driver differences."
+    ],
+    "source_pdf": "080623_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "080623_aila_sarkka_q4",
+    "exam_id": "080623_aila_sarkka",
+    "prompt": "Let us have a random sample from a normal distribution with mean \u00b5 and variance 100. We test the hypothesis H0 : \u00b5 = 0 against H1 : \u00b5 > 0. Determine the sample size n needed to achieve 80% power at significance level 5% when the true mean is 1 .5. (5p)",
+    "answer": "This is a one-sample one-sided z-test with known variance. The exam asks for the sample size required to achieve a target power when the true mean is 1.5.",
+    "question_type": "One-sample mean inference",
+    "primary_test": "Large-sample test for the mean (Z-test)",
+    "alternative_tests": [],
+    "tags": [
+      "one-sample z-test",
+      "sample size",
+      "power",
+      "known variance"
+    ],
+    "hints": [
+      "Known variance 100.",
+      "One-sided alternative.",
+      "This is a power/sample-size calculation."
+    ],
+    "source_pdf": "080623_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "080623_aila_sarkka_q5",
+    "exam_id": "080623_aila_sarkka",
+    "prompt": "We would like to compare 32 different car models in terms of mileage per gallon (mpg), cylinder displacement (disp), horse power (hp), and weight of the car (wt). Particularly, we would like to establish the relationship between \u201dmpg\u201d as a response variable with \u201ddisp\u201d,\u201dhp\u201d, and \u201dwt\u201d as predictor variables by performing a multiple regression analysis. a) Write down an appropriate multiple regression model. b) The results of the regression analysis are summarized in the following table estimate t-value p-value (intercept) 37.105505 17.579 0.00000 disp -0.000937 -0.091 0.92851 hp -0.031157 -2.724 0.01097 wt -3.800891 -3.565 0.00133 Interpret the results in the table. Give the assumptions needed to draw the conclusions you drew. c) What are the multiple coefficient of determination R2 and adjusted coefficient of determination R2 a used for in multiple regression analysis? What is the purpose of using the adjusted one? d) Here, the multiple R2 is 0.8268 and the adjusted R2 is 0.8083. What do these say about the model fit? (7p)",
+    "answer": "Use multiple linear regression with mpg as the response and disp, hp, and wt as predictors. The focus is model specification, coefficient interpretation, assumptions, and the meaning of R-squared style fit summaries.",
+    "question_type": "Regression",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "multiple regression",
+      "coefficient interpretation",
+      "model fit"
+    ],
+    "hints": [
+      "Several predictors.",
+      "Continuous response."
+    ],
+    "source_pdf": "080623_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "150823_aila_sarkka_q1",
+    "exam_id": "150823_aila_sarkka",
+    "prompt": "All three questions below (a-c) concern the Bayesian approach to estimate parameters: a) Give the idea behind the Bayesian approach. b) How do you choose the prior distribution? c) What is a conjugate prior? (5p)",
+    "answer": "No frequentist test is being selected here. This is a Bayesian foundations question about the basic idea of the Bayesian approach, how a prior is chosen, and what a conjugate prior means.",
+    "question_type": "Bayesian inference",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "Bayesian estimation",
+      "prior choice",
+      "conjugate prior"
+    ],
+    "hints": [
+      "Focus on Bayesian vocabulary.",
+      "No rejection region is requested."
+    ],
+    "source_pdf": "150823_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "150823_aila_sarkka_q2",
+    "exam_id": "150823_aila_sarkka",
+    "prompt": "We investigate the effect of a new drug on 50 different factors by computing 50 95% confidence intervals, one for the mean value of each factor (based on the sample size 40 in each case). Suppose that the drug has no effect on any of the 50 factors. What is the probability that at least two of these 50 confidence intervals show that there would be a significant effect? What assumptions do we have to make to rely on the result? (4p)",
+    "answer": "This is a multiple-testing question. Model the number of false significant findings among 50 independent intervals and compute the probability that at least two intervals falsely suggest an effect.",
+    "question_type": "Multiple testing and power",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "multiple testing",
+      "binomial count of false positives",
+      "independence assumption"
+    ],
+    "hints": [
+      "Many intervals.",
+      "All null effects are assumed true.",
+      "Independence is the key assumption."
+    ],
+    "source_pdf": "150823_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "150823_aila_sarkka_q3",
+    "exam_id": "150823_aila_sarkka",
+    "prompt": "To investigate whether the proportion of red M&M candies in the plain and peanut variants of the candy is the same, a random sample of each variant was collected. In the sample of 56 plain candies, 12 were red, and in the sample of 32 peanut candies, 8 were red. a) Construct a 95% confidence interval for the difference in the proportions of red candies for the plain and peanut variants. Does there seem to be a difference in the proportions of the red candies for the plain and peanut variants? Explain. b) Perform a hypothesis test to determine whether there is a significant difference in the proportions of red candies for the two variants. Use the significance level 5% and compare to the result in a). c) Give the assumption we need to make in a) and b). d) When should we use a non-parametric test instead of the one in b)? Which non-parametric test would be suitable in this case? Describe the idea of that test. (8p)",
+    "answer": "Use inference for two proportions. The main methods are a confidence interval for the difference in proportions and a two-sample proportion z-test, with Fisher's exact test as the small-sample exact fallback.",
+    "question_type": "Two-proportion inference",
+    "primary_test": "Large-sample test for two proportions",
+    "alternative_tests": [
+      "Fisher's exact test"
+    ],
+    "tags": [
+      "confidence interval for difference in proportions",
+      "two-sample proportion z-test",
+      "Fisher's exact test"
+    ],
+    "hints": [
+      "Two candy variants.",
+      "Binary outcome: red or not red."
+    ],
+    "source_pdf": "150823_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "150823_aila_sarkka_q4",
+    "exam_id": "150823_aila_sarkka",
+    "prompt": "An experiment was conducted to compare the glare characteristics of four types of rearview mirrors of cars. Ten drivers were randomly selected to participate in the experiment. Each driver was exposed to glare produced by a headlight located nine meters behind the rear window of the car. The driver then rated the glare produced by the rearview mirror on a scale 1 (low) to 10 (high). Each of the four mirrors was tested by each driver and the mirrors were assigned to a driver in a random order. An analysis of variance produced the following incomplete ANOVA table: Source Df Sum Sq Mean Sq F value Mirrors ? 12.32 ? ? Drivers ? ? 8.42 ? Error ? ? ? Total 158.32 a) What kind of design (type of ANOVA) has been used? b) Write down the hypotheses that are tested with the analysis of variance. c) Fill in the ?\u2019s in the ANOVA table. d) Interpret the results in the ANOVA table. (Take advantage of the F-distribution table.) e) Why is the order of the mirrors randomized for each driver? f) Based on the results in d), what are the practical implications of this experiment for the manufactures of the rearview mirrors? (8p)",
+    "answer": "This is a randomized block design because every driver rates every mirror. The primary method is blocked ANOVA, and a Friedman-type non-parametric backup is the natural alternative if normal-model assumptions fail.",
+    "question_type": "Randomized block design",
+    "primary_test": "F-test (Randomized block design)",
+    "alternative_tests": [
+      "Friedman's test"
+    ],
+    "tags": [
+      "randomized block ANOVA",
+      "Friedman test",
+      "blocked design"
+    ],
+    "hints": [
+      "Drivers are blocks.",
+      "Mirrors are treatments.",
+      "Same drivers see all mirrors."
+    ],
+    "source_pdf": "150823_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "150823_aila_sarkka_q5",
+    "exam_id": "150823_aila_sarkka",
+    "prompt": "To pass a course one has to pass an exam and do a project. The teacher has graded the exams and the projects and computed (estimated) the correlation coefficient between the two scores. (The correlation coefficient between two stochastic variables X and Y with standard deviations \u03c3X and \u03c3Y is defined as the covariance between X and Y divided by \u03c3X \u03c3Y .) a) What can the teacher use this correlation coefficient for? b) What conclusions can the teacher draw if the correlation coefficient between the two scores is 0.78? c) Say, that the correlation coefficient was 0.32 with a 95% confidence interval 0.32 \u00b1 0.43. How can we interpret this result? d) Which assumptions do we have to make to be able to compute the correlation coefficient and the confidence interval for it? (5p)",
+    "answer": "This is a correlation and linear-association question. The task is to interpret the estimated correlation between exam and project scores and understand what a confidence interval that includes zero implies.",
+    "question_type": "Regression",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "correlation",
+      "confidence interval for correlation"
+    ],
+    "hints": [
+      "Linear association only.",
+      "Interpret both point estimate and interval."
+    ],
+    "source_pdf": "150823_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "120324_tony_johansson_q1",
+    "exam_id": "120324_tony_johansson",
+    "prompt": "No calculations are required for this problem. Suppose we are interested in the average age in a population of size N. (a) (2p) Explain the difference in using a random sample and a simple random sample for this problem. (b) (2p) What does it mean that the sample mean is an unbiased and consistent estimator for \u00b5? (c) (2p) Let X be the sample mean based on a random sample, and X s the sample mean based on a simple random sample. How are the standard errors for the two estimators related? If we were to define 95% confidence intervals for \u00b5, one using each estimator, which one would be smaller?",
+    "answer": "No single hypothesis test. This question is about sampling design and the sample mean: random versus simple random sampling, unbiasedness, consistency, and how those choices affect standard errors and confidence interval width.",
+    "question_type": "Sampling and design",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "random sampling",
+      "simple random sampling",
+      "unbiasedness",
+      "consistency"
+    ],
+    "hints": [
+      "Sampling terminology.",
+      "Compare estimator precision under different sampling schemes."
+    ],
+    "source_pdf": "120324_tony_johansson.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "120324_tony_johansson_q2",
+    "exam_id": "120324_tony_johansson",
+    "prompt": "Johanna is shopping for a new skateboard, and is choosing between three boards of different types; vert, street and all\u2013round. For each board, she attempts the same trick over and over again until she feels satisfied, and records the number of successful attempts in a table: Vert Street All\u2013round \u03a3 Success 10 12 28 50 Failure 15 5 20 40 \u03a3 25 17 48 90 (a) (1p) With the given information, Johanna\u2019s experiment design may not be appropriate for either a test of homogeneity or a test of independence. Why not? (b) (5p) Pretend that the data comes from a properly designed experiment, and perform either test at significance level\u03b1 = 0.05. Does the type of board matter for her probability of successfully performing the trick?",
+    "answer": "The design critique comes first, but the intended inferential tool is a chi-squared test for a board-type-by-success table. If the experiment were properly designed with separate board groups, the natural method would be a chi-squared test of homogeneity.",
+    "question_type": "Categorical data analysis",
+    "primary_test": "Chi-squared test of homogeneity",
+    "alternative_tests": [
+      "Chi-squared test of independence"
+    ],
+    "tags": [
+      "chi-squared test of homogeneity",
+      "chi-squared test of independence",
+      "design critique"
+    ],
+    "hints": [
+      "Board type versus success/failure.",
+      "The first part asks whether the design justifies a chi-squared analysis at all."
+    ],
+    "source_pdf": "120324_tony_johansson.pdf",
+    "source_question": "2",
+    "classification_confidence": "medium"
+  },
+  {
+    "id": "120324_tony_johansson_q3",
+    "exam_id": "120324_tony_johansson",
+    "prompt": "Consider a distribution family D(\u03b1, \u03b2) where \u03b1, \u03b2 > 0, characterized by the probability density function f(x) = \u001a \u03b2e\u2212\u03b2(x\u2212\u03b1), x \u2265 \u03b1, 0, x < \u03b1. In words, X \u223c D (\u03b1, \u03b2) if it can be written as X = \u03b1 + Y where Y \u223c Exp(\u03b2). You will be helped by knowing that E [X] = \u03b1 + 1 \u03b2 , Var (X) = 1 \u03b22 . (a) (2p) Find the maximum\u2013likelihood estimators bA and bB for \u03b1, \u03b2 respectively, based on a random sample X1, . . . , Xn. (b) (2p) Find the distribution of the estimator bA. What is its bias and standard error? (c) (2p) Provide a short (not necessarily formal) argument for why bB is consistent.",
+    "answer": "No single hypothesis test. This is a point-estimation question centered on maximum likelihood for a shifted exponential family, plus the bias, standard error, and consistency of the resulting estimators.",
+    "question_type": "Point estimation",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "maximum likelihood",
+      "bias",
+      "standard error",
+      "consistency"
+    ],
+    "hints": [
+      "Estimator derivation, not test selection.",
+      "Shifted exponential structure."
+    ],
+    "source_pdf": "120324_tony_johansson.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "120324_tony_johansson_q4",
+    "exam_id": "120324_tony_johansson",
+    "prompt": "(6p) A magic 8\u2013ball is a fortune\u2013telling toy which containsm \u2208 N distinct hidden messages. When shaken, it randomly displays one of the m messages. Propose a test for H0 : m = 8 against H1 : m > 8 based on shaking the ball n = 8 times. Choose a test statistic, and pick a rejection region with significance level between 0.01 and 0.1. The messages are assumed to be chosen uniformly at random and independent of previous messages. The messages themselves are not numbered, nor do they contain any other information that could help us tell what m is.",
+    "answer": "This is not one of the standard named tests from the course list, but it is still a hypothesis-testing design problem. Build a custom test around the number of distinct messages observed under the null model m = 8 versus the larger-support alternative.",
+    "question_type": "Goodness of fit",
+    "primary_test": "Custom goodness-of-fit test (review needed)",
+    "alternative_tests": [],
+    "tags": [
+      "custom discrete test",
+      "counting argument",
+      "null versus larger-support alternative"
+    ],
+    "hints": [
+      "Count distinct observed categories.",
+      "Uniform draws under the null."
+    ],
+    "source_pdf": "120324_tony_johansson.pdf",
+    "source_question": "4",
+    "classification_confidence": "medium"
+  },
+  {
+    "id": "120324_tony_johansson_q5",
+    "exam_id": "120324_tony_johansson",
+    "prompt": "Sandra sells art through two different online platforms (A and B). Each platform is auction\u2013based, meaning the price paid is determined by customers. To tell which platform tends to end up with a higher price, she creates twentyfour copies of the same artwork and sells ten each on the two platforms. The price paid (sorted)is listed below, with the total at the bottom. Price A Price B 200 800 230 1000 400 1000 480 1200 500 1600 520 2100 600 2900 700 3400 12400 6800 34000 10700 50030 31500 (a) (3p) Use a hypothesis test to test if there is a significant ( \u03b1 = 0.05) difference in distribution. (b) (3p) The total is much higher for platform A, while the median is higher for platform B. We do not know if these differences are statistically significant. Propose a future test to help Sandra decide which platform to focus her attention on. Discuss hypotheses and assumptions as well as reasonable sample sizes. Keep in mind that each piece takes days to create, and Sandra might lose a lot of time and money if she wastes pieces on tests. This is an open question with no \u2019best\u2019 answer. Distribution tables If the value you\u2019re seeking is missing, pick the closest available. Note that the normal and t distributions are symmetric around zero, meaning their cdf\u2019s satisfy F (\u2212x) = 1 \u2212 F (x) and F \u22121(\u03b1) = \u2212F \u22121(1 \u2212 \u03b1). Standard normal cdf \u03a6(y + x) x = 0.0 x = 0.05 x = 0.1 x = 0.15 y = 0.0 0.500 0.520 0.540 0.560 y = 0.2 0.579 0.599 0.618 0.637 y = 0.4 0.655 0.674 0.691 0.709 y = 0.6 0.726 0.742 0.758 0.773 y = 0.8 0.788 0.802 0.816 0.829 y = 1.0 0.841 0.853 0.864 0.875 y = 1.2 0.885 0.894 0.903 0.911 y = 1.4 0.919 0.926 0.933 0.939 y = 1.6 0.945 0.951 0.955 0.960 y = 1.8 0.964 0.968 0.971 0.974 y = 2.0 0.977 0.980 0.982 0.984 y = 2.2 0.986 0.988 0.989 0.991 y = 2.4 0.992 0.993 0.994 0.995 y = 2.6 0.995 0.996 0.997 0.997 y = 2.8 0.997 0.998 0.998 0.998 Quantiles for t distribution: F \u22121 t(df)(1 \u2212 \u03b1) Decreasing in df for fixed \u03b1 \u03b1 = 0.9 \u03b1 = 0.95 \u03b1 = 0.975 \u03b1 = 0.99 df = 1 3.08 6.31 12.71 31.82 df = 2 1.89 2.92 4.30 6.96 df = 3 1.64 2.35 3.18 4.54 df = 4 1.53 2.13 2.78 3.75 df = 5 1.48 2.02 2.57 3.36 df = 10 1.37 1.81 2.23 2.76 df = 15 1.34 1.75 2.13 2.60 df = 20 1.33 1.72 2.09 2.53 df = 30 1.31 1.70 2.04 2.46 df = 50 1.30 1.68 2.01 2.40 df = 100 1.29 1.66 1.98 2.36 df = \u221e 1.28 1.64 1.96 2.33 Distribution tables, 1 of 2 Quantiles for \u03c72 distribution: F \u22121 \u03c72(df)(1 \u2212 \u03b1) \u03b1 = 0.1 \u03b1 = 0.05 \u03b1 = 0.01 df = 1 2.71 3.84 6.63 df = 2 4.61 5.99 9.21 df = 3 6.25 7.81 11.3 df = 4 7.78 9.49 13.3 df = 5 9.24 11.1 15.1 df = 6 10.6 12.6 16.8 df = 7 12.0 14.1 18.5 df = 8 13.4 15.5 20.1 df = 9 14.7 16.9 21.7 df = 10 16.0 18.3 23.2 0.95\u2013quantiles for F distribution with df = (df 1, df 2) Decreasing in df 2 for fixed df 1 df 1 = 1 df 1 = 2 df 1 = 3 df 1 = 4 df 1 = 5 df 2 = 1 161 200 215 224 230 df 2 = 5 6.60 5.79 5.41 5.19 5.05 df 2 = 7 5.59 4.73 4.35 4.12 3.97 df 2 = 10 4.96 4.10 3.71 3.48 3.33 df 2 = 15 4.54 3.68 3.28 3.05 2.90 df 2 = 20 4.35 3.49 3.10 2.87 2.71 df 2 = 30 4.17 3.32 2.92 2.69 2.53 df 2 = 40 4.08 3.23 2.83 2.60 2.45 df 2 = 50 4.03 3.18 2.79 2.56 2.40 df 2 = 100 3.93 3.08 2.70 2.46 2.31 Distribution tables, 2 of 2",
+    "answer": "Treat this as an independent two-group comparison with a heavy-skew or outlier-sensitive outcome. The safer first-choice method is a rank-sum test comparing the platform price distributions rather than a mean-based t-test.",
+    "question_type": "Independent two-sample comparison",
+    "primary_test": "Rank sum test",
+    "alternative_tests": [],
+    "tags": [
+      "rank-sum test",
+      "independent samples",
+      "distribution comparison"
+    ],
+    "hints": [
+      "Independent groups of artworks sold on two platforms.",
+      "The question asks about difference in distribution, not just average price."
+    ],
+    "source_pdf": "120324_tony_johansson.pdf",
+    "source_question": "5",
+    "classification_confidence": "medium"
+  },
+  {
+    "id": "270824_aila_sarkka_q1",
+    "exam_id": "270824_aila_sarkka",
+    "prompt": "a) Define a 95% credibility interval. b) Define the p-value of a test. c) What is the difference between the \u03c72 test of homogeneity and the \u03c72 test of independence? (6p)",
+    "answer": "No single test needs to be selected. This is a theory question about what a credibility interval means, how to define a p-value, and how the chi-squared tests of homogeneity and independence differ in design and interpretation.",
+    "question_type": "Theory and foundations",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "credibility interval",
+      "p-value",
+      "chi-squared homogeneity",
+      "chi-squared independence"
+    ],
+    "hints": [
+      "Definitions only.",
+      "Distinguish study design as well as the null hypothesis."
+    ],
+    "source_pdf": "270824_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "270824_aila_sarkka_q2",
+    "exam_id": "270824_aila_sarkka",
+    "prompt": "We have conducted a study where we want to estimate the mean weight of a specific species of sheep. We assume that the weight is normally distributed with standard deviation 5 (kg). Based on the weights of 100 (independent) sheep, we obtain the confidence interval 92.6 \u2264 \u00b5 \u2264 95.2. for the mean weight (in kg). a) Which level of confidence does the interval have? b) How many observations would be needed to obtain the same interval (92.6 \u2264 \u00b5 \u2264 95.2) but with the confidence 95%. (4p)",
+    "answer": "This is one-sample mean inference with known standard deviation. The core tasks are reading the confidence level implied by a given interval and solving for the sample size needed to keep the same width at 95% confidence.",
+    "question_type": "One-sample mean inference",
+    "primary_test": "Large-sample test for the mean (Z-test)",
+    "alternative_tests": [],
+    "tags": [
+      "confidence interval for mean",
+      "sample size",
+      "known variance"
+    ],
+    "hints": [
+      "Known sigma.",
+      "Interval width drives the sample-size calculation."
+    ],
+    "source_pdf": "270824_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "270824_aila_sarkka_q3",
+    "exam_id": "270824_aila_sarkka",
+    "prompt": "A pooled sample variance is used to estimate the common population variance in a two sample t-test. \u2022 Show that the pooled sample variance is an unbiased estimator for the population variance. \u2022 The pooled sample variance is also a consistent estimator for the population variance. Define consistency of an estimator. (4p)",
+    "answer": "No new test is being chosen; this is about the pooled variance estimator used inside the equal-variance two-sample t-test. The question focuses on why that estimator is unbiased and consistent.",
+    "question_type": "Point estimation",
+    "primary_test": "Two-sample t-test",
+    "alternative_tests": [],
+    "tags": [
+      "pooled variance",
+      "two-sample t-test",
+      "unbiasedness",
+      "consistency"
+    ],
+    "hints": [
+      "Connect the estimator to the equal-variance two-sample t-test.",
+      "Proof question, not a reject/do-not-reject problem."
+    ],
+    "source_pdf": "270824_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "270824_aila_sarkka_q4",
+    "exam_id": "270824_aila_sarkka",
+    "prompt": "A farmer compared the effect of four types of pesticides (Pest 1-4) in order to avoid unpleasant plant pests. Each pesticide was used to treat 5 different land areas. The table below gives the counts of larvae for the four pesticides. Pest 1 Pest 2 Pest 3 Pest 4 279 378 172 381 338 275 335 346 334 412 335 340 198 265 282 471 303 286 250 318 An analysis of variance produced the following incomplete ANOVA table: Source Df Sum Sq Mean Sq F value Pest ? 27230 ? ? Error ? ? ? Total ? 91190 a) Write down the hypotheses that are tested with the analysis of variance. b) Fill in the ?\u2019s in the ANOVA table. c) Interpret the results in the ANOVA table. (Take advantage of the F-distribution table.) d) Use a non-parametric test as well and compare the results based on the ANOVA test above. e) Which pesticide would you recommend to the farmer to use? Why? (8p)",
+    "answer": "Use one-way ANOVA to compare the four pesticide groups, and use the Kruskal-Wallis test as the requested non-parametric check. The design has four independent treatment groups with one quantitative response.",
+    "question_type": "One-way ANOVA and non-parametric alternatives",
+    "primary_test": "F-test (One-way ANOVA)",
+    "alternative_tests": [
+      "Kruskal-Wallis test"
+    ],
+    "tags": [
+      "one-way ANOVA",
+      "Kruskal-Wallis test"
+    ],
+    "hints": [
+      "Four pesticides.",
+      "Independent land areas.",
+      "ANOVA plus non-parametric backup."
+    ],
+    "source_pdf": "270824_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "270824_aila_sarkka_q5",
+    "exam_id": "270824_aila_sarkka",
+    "prompt": "We investigate whether \u201dvalue added per work-hour\u201d (value below) is affected by the size of the store (size below) by using regression analysis. The variable \u201dvalue added per work-hour\u201d is defined as the surplus available to pay for labor, furniture, and equipment. (Value is measured in dollars and size in thousand square feet.) The collected data and a scatter plot are shown below. Store Value ( y) Size ( x) 1 4.08 21.0 2 3.40 12.0 3 3.51 25.2 4 3.09 10.4 5 2.92 30.9 6 1.94 6.8 7 4.11 19.6 8 3.16 14.5 9 3.75 25.0 10 3.60 19.1 a) First, a simple linear regression model was fitted to the data resulting in the following estimated coefficients Estimate t-value p-value (Intercept) 2.62 5.03 0.001 Size 0.04 1.50 0.171 The coefficient of determination of the model is 0.22. Write down the corresponding model and state the assumptions needed for the regression analysis. b) Discuss and interpret the results in a). c) Then, a quadratic regression model was fitted to the data with the estimated coefficients Estimate t-value p-value (Intercept) -0.16 -0.32 0.7595 Size 0.39 6.76 0.0003 Size2 -0.009 -6.19 0.0005 Write down the model and interpret the results based on this analysis. d) The coefficient of multiple determination and the adjusted coefficient of multiple determination for the model in c) are 0.88 and 0.85, respectively. Why are they different? e) Which model, the one in a) or the one in c), seems to fit better to the data? Why? (8p)",
+    "answer": "This is a regression-modeling question. Start with simple linear regression, interpret the slope test and fit quality, then consider a quadratic extension because the scatter plot suggests curvature.",
+    "question_type": "Regression",
+    "primary_test": "Tests for intercept and slope",
+    "alternative_tests": [],
+    "tags": [
+      "simple linear regression",
+      "quadratic regression",
+      "t-test for slope"
+    ],
+    "hints": [
+      "One predictor first.",
+      "Then assess whether curvature improves the model."
+    ],
+    "source_pdf": "270824_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q1",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "a) When should one use the finite population correction? b) In stratified sampling with k strata, the sample mean becomes \u00afX = kX j=1 wj \u00afXj, where wi is the stratum fraction and \u00afXi the sample mean in stratum i, i = 1, ..., k. Compute the variance of \u00afX if the n observations in the sample are allocated as nj = nwj\u03c3j/\u00af\u03c3, where \u00af\u03c3 = w1\u03c31 + ... + wk\u03c3k and \u03c3j is the standard deviation in stratum j. c) When should one use blocking and randomization when planning an experiment? (4p)",
+    "answer": "No single hypothesis test. This is a sampling-and-design question covering finite population correction, stratified allocation formulas, and when blocking plus randomization should be used in experimental design.",
+    "question_type": "Sampling and design",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "finite population correction",
+      "optimal allocation",
+      "blocking",
+      "randomization"
+    ],
+    "hints": [
+      "Sampling formulas plus experimental design concepts.",
+      "Look for FPC and allocation rules."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q2",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "Let us have a sample x1, ..., xn from Pois(\u00b5) distribution with the probability mass function P (X = x) = (\u00b5x/x!) e\u2212\u00b5, x = 0, 1, ... a) Find the maximum likelihood estimate for \u00b5. b) Use a Gamma prior to derive a posterior distribution and a point estimate for \u00b5. (The density function for Y \u223c Gam(\u03b1, \u03bb) is f(y) = \u03bb\u03b1y\u03b1\u22121e\u2212\u03bby/\u0393(\u03b1), E(Y ) = \u03b1/\u03bb, and Var(Y ) = \u03b1/\u03bb2.) c) Describe one way to construct a 95% credible interval for \u00b5. d) Give an interpretation for a 95% credible interval and for a 95% confidence interval? (6p)",
+    "answer": "This is Bayesian inference for a Poisson model. The tasks combine MLE, a Gamma prior, posterior derivation, one way to form a credible interval, and the interpretation gap between credible and confidence intervals.",
+    "question_type": "Bayesian inference",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "Poisson MLE",
+      "Gamma prior",
+      "credible interval",
+      "confidence interval versus credible interval"
+    ],
+    "hints": [
+      "Poisson likelihood.",
+      "Gamma prior.",
+      "Compare Bayesian and frequentist interval language."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q3",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "To test the effectiveness of protective packaging, a company shipped 1200 orders in regular packaging, of which 20 arrived in damaged condition, and 1500 orders in heavy-duty packaging, of which 15 arrived in damaged condition. a) Based on an appropriate test, can you conclude that heavy-duty packaging reduces the proportion of damaged shipments? Use significance level 0.05 and state the assumptions you need to make to perform your test. b) What is the smallest significance level at which you would be able to conclude that heavy-duty packaging reduces the proportion of damaged shipments? (4p)",
+    "answer": "Use a one-sided two-proportion comparison because the claim is that heavy-duty packaging lowers the damage rate. The question asks both for the significance test at 0.05 and for the smallest significance level that would still reject.",
+    "question_type": "Two-proportion inference",
+    "primary_test": "Large-sample test for two proportions",
+    "alternative_tests": [],
+    "tags": [
+      "two-sample proportion z-test",
+      "one-sided test",
+      "p-value threshold"
+    ],
+    "hints": [
+      "Two packaging types.",
+      "Binary damage outcome.",
+      "One-sided alternative."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q4",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "A farmer used analysis of variance to compare the effect of four types of pesticides (Pest 1-4) in order to avoid unpleasant plant pests. Each pesticide was used to treat 5 different land areas. The table below on the left gives the counts of larvae for the four pesticides and the corresponding boxplot is given on the right. Pest 1 Pest 2 Pest 3 Pest 4 279 378 172 381 338 275 335 346 334 412 335 340 198 265 282 471 303 286 250 318 Pest1 Pest2 Pest3 Pest4 200 250 300 350 400 450 The means(sd) in the pesticide groups 1, 2, 3, and 4 are 290(57), 323(67), 275(68), and 371(60), respectively. a) Give the hypotheses that are tested with the analysis of variance. b) The treatment (Pest) and total sum of squares are SSA = 27230 and SST = 91190, respectively. Compute the test statistic(s) and give its (their) distribution(s), and interpret the results. c) Perform a corresponding non-parametric test, give the hypotheses, and compare the results with the results from the ANOVA test in b). d) Which test, b) or c), would you recommend the farmer to use? Why? (7p)",
+    "answer": "This is another four-group comparison problem. Start with one-way ANOVA on the pesticide groups, then use the Kruskal-Wallis test as the non-parametric comparison and discuss the boxplot evidence.",
+    "question_type": "One-way ANOVA and non-parametric alternatives",
+    "primary_test": "F-test (One-way ANOVA)",
+    "alternative_tests": [
+      "Kruskal-Wallis test"
+    ],
+    "tags": [
+      "one-way ANOVA",
+      "Kruskal-Wallis test"
+    ],
+    "hints": [
+      "Four independent pesticide groups.",
+      "ANOVA plus non-parametric cross-check."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q5",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "Assume you have a sample x1, ..., xn of normal random variables with mean \u00b5 and known variance \u03c32 = 9 and want to test H0 : \u00b5 = 0 against H1 : \u00b5 > 0. at significance level \u03b1 = 0.05. a) Compute the rejection region (which depends on n). b) Assume that the true mean is \u00b5 = \u03b4 > 0. What is the sample size n (as a function of \u03b4) needed for the test to have power of 90%? c) What happens to the sample size needed in b) as \u03b4 \u2192 0? Give a short explanation for this result. (6p)",
+    "answer": "This is a one-sample z-test with known variance under a one-sided alternative. The exam asks for the rejection region, the sample size that gives 90% power when the true mean is delta, and the limiting behavior as delta goes to zero.",
+    "question_type": "One-sample mean inference",
+    "primary_test": "Large-sample test for the mean (Z-test)",
+    "alternative_tests": [],
+    "tags": [
+      "one-sample z-test",
+      "sample size",
+      "power",
+      "known variance"
+    ],
+    "hints": [
+      "Known variance 9.",
+      "One-sided alternative.",
+      "Power-based sample-size question."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "180325_aila_sarkka_q6",
+    "exam_id": "180325_aila_sarkka",
+    "prompt": "We have a dataset of 156 countries, that contains information about the Happiness index (Happiness) that can be explained by the social support from the state (Social), healthy life expectancy (Healthy), freedom to make choices in life (Freedom) and generosity (Generosity). a) A multiple regression analysis to predict Happiness was performed in R and it gave the following results: State the multiple regression model that corresponds to the R output. b) Interpret the results in a) in terms of the covariates and the model fit. c) What assumptions does one have to make to be able to rely on the results based on the multiple regression analysis? (3p)",
+    "answer": "Use multiple linear regression for the Happiness response. The focus is writing the model, interpreting which covariates matter, understanding overall fit, and stating the residual assumptions needed for inference.",
+    "question_type": "Regression",
+    "primary_test": "Tests for intercept and slope",
+    "alternative_tests": [
+      "Model utility test"
+    ],
+    "tags": [
+      "multiple regression",
+      "coefficient significance",
+      "model fit"
+    ],
+    "hints": [
+      "Several predictors.",
+      "Check both coefficient tests and overall fit."
+    ],
+    "source_pdf": "180325_aila_sarkka.pdf",
+    "source_question": "6",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q1",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "a) What are the two important properties of a point estimator? b) Show that the sample mean has these properties. (5p)",
+    "answer": "No single test. This is a core estimator-properties question: identify the two important properties and show that the sample mean has them under the usual random-sample assumptions.",
+    "question_type": "Point estimation",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "unbiasedness",
+      "consistency",
+      "sample mean"
+    ],
+    "hints": [
+      "Unbiasedness and consistency.",
+      "Estimator theory, not hypothesis testing."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q2",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "We would like to compare the means \u00b51 and \u00b52 of two (independent) samples of equal size. Let the alternative hypothesis be one-sided ( \u00b51 > \u00b52), and the variables normally distributed with a common variance \u03c32. Determine the sample size n needed to achieve at least 80% power (as a function of \u03c32 and the difference between the population means) at significance level 5%. Let the true difference in means, \u00b51 \u2212\u00b52, be denoted by \u03b4. (4p)",
+    "answer": "This is an independent two-group mean comparison with known variance structure, framed as a sample-size and power calculation. The target procedure is the one-sided two-sample normal-theory test for the difference in means.",
+    "question_type": "Independent two-sample comparison",
+    "primary_test": "Large-sample test for the mean difference",
+    "alternative_tests": [],
+    "tags": [
+      "two-sample z-test",
+      "power",
+      "sample size",
+      "equal variances"
+    ],
+    "hints": [
+      "Two independent samples.",
+      "Common variance known symbolically.",
+      "Power at 80%."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q3",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "We investigate the effect of a new drug on 50 different factors by computing 50 95% confidence intervals for the mean values of these factors based on sample size 40 for each effect. Assume that the method has no effect on any of the 50 factors, i.e. that all confidence intervals should cover the \u201dnormal\u201d value that the factor has without any medication. a) What is the probability that at least two of these 50 confidence intervals do not cover the \u201dnormal\u201d value? b) To compute the probability in a), what assumptions do you have make about the probability distribution of the underlying observations? Explain. (4p)",
+    "answer": "This is a multiple-testing problem. Count how often 95% intervals miss the normal value when all null effects are actually true, and make the independence assumptions explicit.",
+    "question_type": "Multiple testing and power",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "multiple testing",
+      "at least two false positives",
+      "independence assumption"
+    ],
+    "hints": [
+      "Many confidence intervals.",
+      "All true nulls.",
+      "Need an assumption about independence."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q4",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "A group of ecologists study the effect of a fertilizer on plant growth. They gave this fertilizer to a group of plants (Group A) and no fertilizer to another group of plants (Group B). The growth of plants in millimeters, over six weeks, and the corresponding normal QQ-plots are given below. Group A: 55 61 33 57 17 46 50 42 71 51 63 Group B: 31 27 12 44 9 25 34 53 33 21 32 The mean in Group A is 49.6 and the standard deviation 15.0 and the corresponding values in Group B are 29.2 and 12.8. a) By using an appropriate parametric test, test the null hypothesis that the group means are equal against the alternative hypothesis that the fertilizer enhances growth. Discuss the results. b) Perform an appropriate non-parametric test to compare the groups. Give also the hypotheses and discuss the results. c) Give the assumptions you need to make in a) and b). Do they seem to be valid? d) Compare the results in a) and b). Which test would you recommend and why? (7p)",
+    "answer": "Use an independent two-group comparison. The parametric method is a one-sided two-sample t-test for fertilizer versus no fertilizer, and the non-parametric companion is a rank-sum style test because the samples are independent.",
+    "question_type": "Independent two-sample comparison",
+    "primary_test": "Two-sample t-test",
+    "alternative_tests": [
+      "Rank sum test"
+    ],
+    "tags": [
+      "two-sample t-test",
+      "rank-sum test",
+      "one-sided alternative",
+      "independent samples"
+    ],
+    "hints": [
+      "Two plant groups.",
+      "Continuous growth outcome.",
+      "Parametric and non-parametric analyses are both requested."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q5",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "The amount of improvement of a genetic disease is measured for 18 patients who are randomly assigned to the nine experimental configurations, with two patients to each configuration, corresponding to three dosage levels of each of the active ingredients (Inc A and Inc B) of a drug. The experimental results are given in the table below. Inc A Inc B low medium high low 17 16 26 19 16 25 medium 17 19 28 14 12 22 high 19 15 27 22 19 19 a) The researchers perform an analysis of variance. Give the ANOVA model and the hypotheses tested. b) Complete the incomplete ANOVA table (?\u2019s) below Df Sum Sq Mean Sq F value IncA ? ? 115.06 11.016 IncB ? ? 3.72 ? IncA:IncB ? ? 6.72 ? Residuals ? ? 10.44 c) Interpret the results in b). Do the dosages of the active incredients have significant effect on the improvement of the genetic disease? (5p)",
+    "answer": "This is a two-way factorial experiment with three dosage levels for each active ingredient. Use two-way ANOVA with interaction to write the model, fill the table, and interpret the factor and interaction effects.",
+    "question_type": "Two-way ANOVA",
+    "primary_test": "F-test (Two-way ANOVA)",
+    "alternative_tests": [],
+    "tags": [
+      "two-way ANOVA",
+      "interaction",
+      "factorial experiment"
+    ],
+    "hints": [
+      "Two factors, each with three levels.",
+      "Interaction term matters."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "280825_aila_sarkka_q6",
+    "exam_id": "280825_aila_sarkka",
+    "prompt": "It was studied how the sale of a product ( y) is affected by media advertisement costs ( x1) and point-of-sale costs ( x2) by using multiple regression. Sixteen stores were selected for the test. a) The sample correlation coefficient computed from the 16 pairs (x1, x2) is zero. Is this a good or bad feature of the experimental design? Explain. b) The following table presents a part of the computer output for multiple regression Variable Coeff. Std. dev. T stat. Constant 2.13438 .61036 3.50 x1 3.02925 .12028 25.18 x2 .70575 .12028 5.87 Test whether the factors x1 and x2 are significant. c) For a supermarket with media advertising costs x1 = 2 and point-ofsale costs x2 = 4, what would be your prediction for the dollar sales of the product under the study? (5p)",
+    "answer": "Use multiple linear regression with media advertisement and point-of-sale cost as predictors. The tasks are significance testing for coefficients and a prediction-style calculation for a new supermarket.",
+    "question_type": "Regression",
+    "primary_test": "Tests for intercept and slope",
+    "alternative_tests": [],
+    "tags": [
+      "multiple regression",
+      "coefficient t-tests",
+      "prediction interval"
+    ],
+    "hints": [
+      "Two predictors.",
+      "Interpret t-statistics and produce a prediction."
+    ],
+    "source_pdf": "280825_aila_sarkka.pdf",
+    "source_question": "6",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q1",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "Last year, 5000 students were enrolled in a small college. We are given a list of their names, and for each person we are also told whether they come directly from high school (Group A), whether they have a degree already (Group B) or whether they do not come directly from high school but do not have an earlier degree (Group C). The number of students in groups A, B, and C are 3000, 500 1500, respectively. We are asked to estimate the mean age of the new students and are only allowed to sample 100 of them. We decide to use stratified random sampling, where the population is divided into three strata, Group A, Group B, and Group C, to draw a sample from the population: 60 students from Group A, 10 from Group B, and 30 from Group C. a) What strategy/method is used to allocate the 100 students to the different groups (strata)? Are there better ways to do the allocation? Explain. b) Assuming normal distribution for age, find a 95% confidence interval for the population mean. The sample means and standard deviations for groups A, B, and C are \u00afxA = 19.6 and sA = 0.8, \u00afxB = 28.2 and sB = 3.1, and \u00afxC = 25.9 and sC = 2.9. c) Would you expect a 95% confidence interval for the population mean based on random sampling from the whole population to be narrower or wider than the one in b)? Explain. (4p)",
+    "answer": "No single hypothesis test. This is a stratified-sampling design question about proportional allocation, how to build a confidence interval for the population mean from stratified samples, and how that compares with simple random sampling.",
+    "question_type": "Sampling and design",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "stratified sampling",
+      "proportional allocation",
+      "confidence interval",
+      "allocation strategy"
+    ],
+    "hints": [
+      "Three strata.",
+      "Allocation choice matters.",
+      "Think precision, not hypothesis testing."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "1",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q2",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "A random sample of 200 married men, all retired, were classified according to education and number of children: Number of children Education 0-1 2-3 Over 3 Elementary 14 36 32 Secondary 20 42 16 College 12 18 10 a) Test, at significance level 0.01, whether there is a relationship between the education level and number of children. Give the hypotheses tested and discuss the results of the test. b) By which factor does college education increase/decrease the odds of having over three children? (4p)",
+    "answer": "Use a chi-squared test of independence on the education-by-number-of-children table. The follow-up asks for an odds ratio interpretation comparing college education with the chance of having more than three children.",
+    "question_type": "Categorical data analysis",
+    "primary_test": "Chi-squared test of independence",
+    "alternative_tests": [],
+    "tags": [
+      "chi-squared test of independence",
+      "odds ratio",
+      "contingency table"
+    ],
+    "hints": [
+      "One contingency table.",
+      "Association between two categorical variables."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "2",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q3",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "The manager of a taxi company is trying to decide whether it is better to use radial tires ( x) or regular belted tires ( y) in terms of fuel economy. Twelve cars were equipped with radial tires and driven over a test course and another set of twelve cars were equipped with regular belted tires and driven over the same test course. The gasoline consumption was recorded as follows: Radial tires: 4.2 4.8 6.6 7.0 6.7 4.5 5.7 6.0 7.4 4.8 6.1 5.2 Belted tires: 4.1 4.9 6.2 6.9 6.8 4.4 5.7 5.8 6.9 4.7 6.0 4.9 For the data above, we obtain \u00afx = 5.75, sx = 1.05, \u00afy = 5.61, sy = 0.99, \u00afd = 0.14, sd = 0.20, where d = x \u2212 y, and the histograms a) Choose an appropriate test to compare the two samples and give the hypotheses you test. Discuss the results and give a recommendation to the manager. b) Give the reasons for choosing the test you performed in a). c) Give the assumptions needed for the test you chose in a). Do they hold? (5p)",
+    "answer": "Treat this as an independent two-group comparison because different cars received radial and belted tires. The question asks you to choose between a normal-theory two-sample test and a non-parametric rank-based alternative after checking distributional assumptions.",
+    "question_type": "Independent two-sample comparison",
+    "primary_test": "Two-sample t-test",
+    "alternative_tests": [
+      "Rank sum test"
+    ],
+    "tags": [
+      "two-sample t-test",
+      "rank-sum test",
+      "independent samples"
+    ],
+    "hints": [
+      "Two separate groups of cars.",
+      "Fuel economy is quantitative.",
+      "Normality assessment matters."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "3",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q4",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "Assume that you have a sample x1, ..., xn of size n = 15, from a distribution with mean \u00b5 and variance \u03c32. Your goal is to find the distribution of Xi\u2019s (i.e. the corresponding random variables). You have the following information about the sample \u00afx = 0.476, s 2 = 4.63, Skewness = 0.07, Kurtosis = 3.35, as well as the QQ-plot a) Would it be reasonable to assume that the sample is drawn from a normal distribution? Explain. From now on, we assume that the data are normally distributed. b) Perform a t-test for the mean at the significance level \u03b1 = 0 .05 to test H0 : \u00b5 = 1 against H1 : \u00b5 < 1. What is your conclusion? c) Perform a test at significance level \u03b1 = 0.05 to test H0 : \u03c32 = 4 against H1 : \u03c32 \u0338= 4. What is your conclusion? Hint: If X1, ..., Xn i.i.d \u223c N (\u00b5, \u03c32), then 1 \u03c32 Pn i=1(Xi \u2212 \u00afX)2 \u223c \u03c72 n\u22121. d) Now, it is given that the true value of \u00b5 is 0 .5 and that \u03c32 is 4. Compute the power of the test in b) and interpret the value of it. (7p)",
+    "answer": "This is a one-sample normal-theory inference problem. First assess whether a normal model is reasonable, then perform a one-sided one-sample t-test for the mean and a chi-squared test for the variance under normality.",
+    "question_type": "One-sample normal inference",
+    "primary_test": "One-sample t-test",
+    "alternative_tests": [
+      "Chi-squared test for the variance"
+    ],
+    "tags": [
+      "normality assessment",
+      "one-sample t-test",
+      "chi-squared test for variance"
+    ],
+    "hints": [
+      "QQ-plot plus skewness and kurtosis.",
+      "Mean test and variance test both appear."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "4",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q5",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "The random variable X follows a Negative Binomial (NB) distribution with parameters ( r, p), r \u2208 N = {0, 1, ...}, p \u2208 (0, 1), i.e. X \u223c NB(r, p), if P(X = k) = \u0012k + r \u2212 1 k \u0013 (1 \u2212 p)kpr for k \u2208 N. Intuitively, the NB distribution can be seen as the number of failures before the r-th success of i.i.d Bernoulli( p) events. Let us have n independent realizations of NB( r, p) denoted by x1, ..., xn. a) Find the maximum likelihood estimator for the parameter p given that r is known. b) For X \u223c Beta(a, b), the density function is gBeta(p; a, b) = \u0393(a + b) \u0393(a)\u0393(b) pa\u22121(1 \u2212 p)b\u22121, p \u2208 [0, 1], a, b > 0. and E[X] = a a+b. Show that the Beta distribution is a conjugate prior for the parameter p of the NB distribution. What are the updated hyperparameters? c) Derive the posterior mean estimate pPME for p. d) Suggest a prior distribution we could choose for the parameter r and briefly justify your choice. (6p)",
+    "answer": "This is Bayesian inference for a Negative Binomial model with known r. The main ideas are the MLE for p, Beta conjugacy for p, and the resulting posterior-based estimate or interval logic.",
+    "question_type": "Bayesian inference",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "negative binomial MLE",
+      "Beta conjugate prior",
+      "Bayesian estimation"
+    ],
+    "hints": [
+      "Negative Binomial likelihood.",
+      "Beta prior for a probability parameter."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "5",
+    "classification_confidence": "high"
+  },
+  {
+    "id": "200326_aila_sarkka_q6",
+    "exam_id": "200326_aila_sarkka",
+    "prompt": "Consider a simple linear regression model Y = \u03b20 + \u03b21x + \u03c3Z, Z \u223c N(0, 1), \u03c3 > 0. Assume you have observed some i.i.d. data from this model which we denote by (x1, y1), ...,(xn, yn). a) Show that the maximum likelihood estimate for \u03b20 equals \u02c6\u03b20 = \u00afy \u2212 \u02c6\u03b21\u00afx. Where \u00afx, \u00afy denote the sample means of x and y, respectively. Hint: You do not have to compute \u02c6\u03b21. b) What property of the regression line follows from (a)? (4p)",
+    "answer": "This is a simple linear regression derivation question. Use the likelihood or least-squares algebra to show the intercept formula and then interpret the geometric consequence for the fitted regression line.",
+    "question_type": "Regression",
+    "primary_test": "",
+    "alternative_tests": [],
+    "tags": [
+      "simple linear regression",
+      "maximum likelihood",
+      "regression line property"
+    ],
+    "hints": [
+      "Show that the fitted line passes through the sample means.",
+      "Regression derivation, not model selection."
+    ],
+    "source_pdf": "200326_aila_sarkka.pdf",
+    "source_question": "6",
+    "classification_confidence": "high"
+  }
+]

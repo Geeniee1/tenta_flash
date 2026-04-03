@@ -22,6 +22,14 @@ class SessionTests(unittest.TestCase):
         cards = filter_cards(self.catalog, selection)
         self.assertEqual([card.id for card in cards], ["statinf-2023-08-q1"])
 
+    def test_filter_cards_by_primary_test(self) -> None:
+        selection = CatalogFilter(
+            course_ids=frozenset({"sample_statistical_inference"}),
+            primary_test="Two-sample t-test",
+        )
+        cards = filter_cards(self.catalog, selection)
+        self.assertEqual([card.id for card in cards], ["statinf-2023-08-q3"])
+
     def test_session_requeues_weak_cards(self) -> None:
         session = SessionEngine(
             self.catalog,

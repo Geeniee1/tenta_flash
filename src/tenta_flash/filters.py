@@ -12,6 +12,7 @@ class CatalogFilter:
     exam_id: str | None = None
     examiner: str | None = None
     question_type: str | None = None
+    primary_test: str | None = None
     start_date: date | None = None
     end_date: date | None = None
 
@@ -27,6 +28,8 @@ def filter_cards(catalog: Catalog, selection: CatalogFilter) -> list[CardRecord]
         if selection.examiner and exam.examiner != selection.examiner:
             continue
         if selection.question_type and card.question_type != selection.question_type:
+            continue
+        if selection.primary_test and card.primary_test != selection.primary_test:
             continue
         if selection.start_date and exam.date < selection.start_date:
             continue
@@ -52,3 +55,13 @@ def available_question_types(catalog: Catalog, course_ids: frozenset[str]) -> li
         card.question_type for card in catalog.cards.values() if not exam_ids or card.exam_id in exam_ids
     }
     return sorted(question_types)
+
+
+def available_primary_tests(catalog: Catalog, course_ids: frozenset[str]) -> list[str]:
+    exam_ids = {exam.id for exam in filter_exams(catalog, course_ids)}
+    primary_tests = {
+        card.primary_test
+        for card in catalog.cards.values()
+        if card.primary_test and (not exam_ids or card.exam_id in exam_ids)
+    }
+    return sorted(primary_tests)

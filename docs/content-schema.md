@@ -61,7 +61,9 @@ Fields:
     "exam_id": "statinf-2023-08",
     "prompt": "A sample mean from a normally distributed population is compared against a known target value. Which hypothesis test should you consider first?",
     "answer": "A one-sample t-test if the population variance is unknown; a z-test only if variance is known and assumptions are satisfied.",
-    "question_type": "one-sample test",
+    "question_type": "One-sample mean inference",
+    "primary_test": "One-sample t-test",
+    "alternative_tests": [],
     "tags": ["hypothesis testing", "means"],
     "hints": ["Check whether variance is known.", "Identify whether the question compares a sample mean to a fixed benchmark."]
   }
@@ -75,8 +77,16 @@ Fields:
 - `prompt`: the flashcard question text
 - `answer`: the solution or classification explanation
 - `question_type`: short label used for filtering
+- `primary_test`: optional exact named test when a single method is the main pattern
+- `alternative_tests`: optional list of nearby methods or non-parametric backups
 - `tags`: optional list of labels
 - `hints`: optional list shown in future iterations
+
+Optional authoring-only fields may also be stored when they help trace source material, for example:
+
+- `source_pdf`: normalized source filename for the original exam PDF
+- `source_question`: original question number in the source exam
+- `classification_confidence`: draft confidence for a suggested test match
 
 ## Validation rules
 
