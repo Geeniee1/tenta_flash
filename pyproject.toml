@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tenta-flash"
+version = "0.1.0"
+description = "A local-first desktop flashcard trainer for recurring exam patterns."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [
+  { name = "Edwin" }
+]
+dependencies = [
+  "PySide6>=6.7,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2,<9",
+]
+
+[project.scripts]
+tenta-flash = "tenta_flash.main:main"
+tenta-flash-validate = "tenta_flash.main:validate_command"
+tenta-flash-bootstrap-macos = "tenta_flash.main:bootstrap_command"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
